@@ -15,7 +15,7 @@ import { Component } from '@angular/core';
 
     <button (click)="acumular(base)">+ {{ base }}</button>
   `,
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./../app.component.css']
 })
 export class ContadorComponent {
   public title: string = 'Contador App';
