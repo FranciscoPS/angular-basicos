@@ -11,13 +11,39 @@ interface Personaje {
 })
 export class MainPageComponent {
 
+  personajes: Personaje[] = [
+    {
+      nombre: 'Goku',
+      poder: 15000
+    },
+    {
+      nombre: 'Vegeta',
+      poder: 7500
+    }
+  ];
+
   nuevo: Personaje = {
-    nombre: 'Trunks',
-    poder: 14000
+    nombre: '',
+    poder: 0
   }
 
-  agregar() {
-    console.log(this.nuevo);
+
+  /**
+   * If the name of the new character is empty, don't do anything. Otherwise, add the new character to
+   * the list of characters and reset the new character to an empty object
+   * @returns the value of the variable nuevo.
+   */
+  agregar () {
+    if ( this.nuevo.nombre.trim().length === 0){
+      return;
+    }
+
+    this.personajes.push(this.nuevo);
+
+    this.nuevo = {
+      nombre: '',
+      poder: 0
+    }
   }
 
 }
